@@ -11,12 +11,11 @@ class MusicAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      elevation: 0,
+      elevation: 1,
       backgroundColor: Colors.white,
        title: Row(
          mainAxisAlignment: MainAxisAlignment.spaceBetween,
          children: [
-          
              Flexible( flex : 1 , child: IconButton(onPressed: ()=>{}, icon : Icon(appBarIcon , color : Colors.black))),
              const Spacer(flex: 1,),
              Flexible(flex : 9 , child: Text(appBarTitle , style: const TextStyle(fontSize: 20 , color : Colors.black),)),

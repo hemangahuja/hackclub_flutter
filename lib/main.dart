@@ -5,10 +5,10 @@ import 'package:test_/track_card.dart';
 
 void main() {
   runApp(const MyApp());
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.white, // navigation bar color
-    statusBarColor: Colors.white, // status bar color
-  ));
+  // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+  //   systemNavigationBarColor: Colors.white, // navigation bar color
+  //   statusBarColor: Colors.white, // status bar color
+  // ));
 }
 
 class MyApp extends StatelessWidget {
@@ -26,123 +26,122 @@ class MyApp extends StatelessWidget {
                 appBarTitle: 'Upload',
                 userImageURL:
                 'https://img.etimg.com/thumb/msid-81525531,width-650,imgsize-622277,,resizemode-4,quality-100/music_thinkstockphotos.jpg'),
-            body: Stack(
+            body: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(30),
-                            decoration: const BoxDecoration(
-                              color: Color(0xffF7F2EE),
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
-                            ),
-                            child: IntrinsicHeight(
-                              child: Row(
-                                children: [
-                                Expanded(
-                                  flex :3,
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                Expanded(
+                  flex:4,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 20, left:20, right:20),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(30),
+                              decoration: const BoxDecoration(
+                                color: Color(0xffF7F2EE),
+                                borderRadius: BorderRadius.all(Radius.circular(10)),
+                              ),
+                              child: IntrinsicHeight(
+                                child: Row(
                                   children: [
-                                    const Text(
-                                      'New Album / Song',
-                                      style: TextStyle(
-                                          fontSize: 18, fontWeight: FontWeight.w900),
-                                    ),
-                                    const Text(
-                                      'Upload any song on cloud and share on social',
-                                      maxLines: 3,
-                                      style: TextStyle(
-                                        fontSize: 15,),
-                                    ),
-                                    Container(
-                                      width: 80,
-                                      padding: const EdgeInsets.all(10),
-                                      decoration: const BoxDecoration(
-                                        color: Color(0xffFF7849),
-                                        borderRadius: BorderRadius.all(Radius.circular(3)),
+                                  Expanded(
+                                    flex :3,
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      const Text(
+                                        'New Album / Song',
+                                        style: TextStyle(
+                                            fontSize: 18, fontWeight: FontWeight.w900),
                                       ),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                        children: const [
-                                          Icon(Icons.upload,color: Colors.white,size: 13,),
-                                          Text( 'Upload', style: TextStyle(fontSize: 13, color: Colors.white,
-                                      ),), ],
+                                      const Text(
+                                        'Upload any song on cloud and share on social',
+                                        maxLines: 3,
+                                        style: TextStyle(
+                                          fontSize: 15,),
                                       ),
-                                    ),
-                                      ],
-                                    ),
+                                      Container(
+                                        width: 80,
+                                        padding: const EdgeInsets.all(10),
+                                        decoration: const BoxDecoration(
+                                          color: Color(0xffFF7849),
+                                          borderRadius: BorderRadius.all(Radius.circular(3)),
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          children: const [
+                                            Icon(Icons.upload,color: Colors.white,size: 13,),
+                                            Text( 'Upload', style: TextStyle(fontSize: 13, color: Colors.white,
+                                        ),), ],
+                                        ),
+                                      ),
+                                        ],
+                                      ),
+                                  ),
+                                    Expanded(flex: 2,child: Image.asset('images/img.png'))
+                                  ],
                                 ),
-                                  Expanded(flex: 2,child: Image.asset('images/img.png'))
-                                ],
                               ),
                             ),
-                          ),
-                          const SizedBox(height: 40,),
-                          const Text(
-                            'In Progress',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w900),
-                          ),
-                          for ( int i = 0; i < 5; i++ )
-                            Padding(
-                              padding: const EdgeInsets.symmetric(vertical : 8.0),
-                              child: Column(
-                                children: [
-                                  TrackCard(data: TrackInfo(
-                                    name: names[i],
-                                    imageURL: 'https://img.etimg.com/thumb/msid-81525531,width-650,imgsize-622277,,resizemode-4,quality-100/music_thinkstockphotos.jpg',
-                                    releaseDate: DateTime(2002),
-                                    length: const Duration(seconds: 10),
-                                    price: 5,
-                                  ) ),
-                                  Divider(thickness: 2,)
-                                ],
-                              ),
-                            )
-                        ]),
+                            const SizedBox(height: 40,),
+                            const Text(
+                              'In Progress',
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w900),
+                            ),
+                            for ( int i = 0; i < names.length; i++ )
+                              Padding(
+                                padding: const EdgeInsets.symmetric(vertical : 8.0),
+                                child: Column(
+                                  children: [
+                                    TrackCard(data: TrackInfo(
+                                      name: names[i],
+                                      imageURL: 'https://img.etimg.com/thumb/msid-81525531,width-650,imgsize-622277,,resizemode-4,quality-100/music_thinkstockphotos.jpg',
+                                      releaseDate: DateTime(2002),
+                                      length: const Duration(seconds: 10),
+                                      price: 5,
+                                    ) ),
+                                    Divider(thickness: 2,)
+                                  ],
+                                ),
+                              )
+                          ]),
+                    ),
                   ),
                 ),
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                      height: 70,
+                      padding: const EdgeInsets.all(20),
                       decoration: const BoxDecoration(
                         color: Color(0xffF7F2EE),
                         borderRadius: BorderRadius.only(
                             topRight: Radius.circular(30),
                             topLeft: Radius.circular(30)),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 30),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text(
-                              'My Tracks (35)',
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            'My Tracks (35)',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.w900),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(8),
+                            child: const Text(
+                              'See All',
                               style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w900),
+                                  fontSize: 12, fontWeight: FontWeight.bold),
                             ),
-                            Container(
-                              padding: const EdgeInsets.all(8),
-                              child: const Text(
-                                'See All',
-                                style: TextStyle(
-                                    fontSize: 12, fontWeight: FontWeight.bold),
-                              ),
-                              decoration: BoxDecoration(
-                                border: Border.all(width: 1),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            )
-                          ],
-                        ),
+                            decoration: BoxDecoration(
+                              border: Border.all(width: 1),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                          )
+                        ],
                       ),
                     ),
                     Container(
