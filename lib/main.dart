@@ -3,14 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:test_/app_bar.dart';
 import 'package:test_/track_card.dart';
 
-void main() {
-  runApp(const MyApp());
-  // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-  //   systemNavigationBarColor: Colors.white, // navigation bar color
-  //   statusBarColor: Colors.white, // status bar color
-  // ));
-}
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
