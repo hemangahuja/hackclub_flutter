@@ -16,43 +16,45 @@ class LoginPage extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
       ),
-      body: Column(
-        children: <Widget>[
-          Column(
-              children: const [
-                Text(
-                  "Musiko",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      fontSize: 30.0),
-                ),
-                Text(
-                  "Let's get started.",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromRGBO(37,22,133,1),
-                      fontSize: 30.0),
-                ),
-              ]),
-          Container(
-              padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(150.0),
-              ),
-              child: Center(
-                child: Text(
-                    "Make the school app "
-                        "your personal assistant",
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Column(
+                children: const [
+                  Text(
+                    "Musiko",
                     style: TextStyle(
-                      fontSize: 20.0,
-                      color: Colors.grey[600],
-                    )),
-              )),
-          const MyStatefulWidget(
-          ),
-        ],
-       ),
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontSize: 30.0),
+                  ),
+                  Text(
+                    "Let's get started.",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(37,22,133,1),
+                        fontSize: 30.0),
+                  ),
+                ]),
+            Container(
+                padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(150.0),
+                ),
+                child: Center(
+                  child: Text(
+                      "Make the school app "
+                          "your personal assistant",
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.grey[600],
+                      )),
+                )),
+            const MyStatefulWidget(
+            ),
+          ],
+         ),
+      ),
     );
   }
 }
